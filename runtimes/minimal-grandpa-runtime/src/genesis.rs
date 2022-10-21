@@ -4,7 +4,7 @@ use super::{
 	AccountId, BalancesConfig, GenesisConfig, GrandpaConfig, Signature, SudoConfig, SystemConfig,
 };
 use sp_core::{sr25519, Pair, Public};
-use sp_finality_grandpa::AuthorityId as GrandpaId;
+use sp_finality_grandpa::AuthorityId as AliVaiID;
 use sp_runtime::traits::{IdentifyAccount, Verify};
 
 /// Helper function to generate a crypto pair from seed
@@ -25,23 +25,23 @@ where
 }
 
 /// Helper function to generate session key from seed
-pub fn authority_keys_from_seed(seed: &str) -> GrandpaId {
-	get_from_seed::<GrandpaId>(seed)
+pub fn authority_keys_from_seed(seed: &str) -> AliVaiID {
+	get_from_seed::<AliVaiID>(seed)
 }
 
 pub fn dev_genesis(wasm_binary: &[u8]) -> GenesisConfig {
 	testnet_genesis(
 		wasm_binary,
 		// Initial Authorities
-		vec![authority_keys_from_seed("Alice")],
+		vec![authority_keys_from_seed("AliVai")],
 		// Root Key
-		account_id_from_seed::<sr25519::Public>("Alice"),
+		account_id_from_seed::<sr25519::Public>("AliVai"),
 		// Endowed Accounts
 		vec![
-			account_id_from_seed::<sr25519::Public>("Alice"),
-			account_id_from_seed::<sr25519::Public>("Bob"),
-			account_id_from_seed::<sr25519::Public>("Alice//stash"),
-			account_id_from_seed::<sr25519::Public>("Bob//stash"),
+			account_id_from_seed::<sr25519::Public>("AliVai"),
+			account_id_from_seed::<sr25519::Public>("Mohaiminul"),
+			account_id_from_seed::<sr25519::Public>("AliVai//stash"),
+			account_id_from_seed::<sr25519::Public>("Mohaiminul//stash"),
 		],
 	)
 }
@@ -49,7 +49,7 @@ pub fn dev_genesis(wasm_binary: &[u8]) -> GenesisConfig {
 /// Helper function to build a genesis configuration
 pub fn testnet_genesis(
 	wasm_binary: &[u8],
-	initial_authorities: Vec<GrandpaId>,
+	initial_authorities: Vec<AliVaiID>,
 	root_key: AccountId,
 	endowed_accounts: Vec<AccountId>,
 ) -> GenesisConfig {

@@ -1,5 +1,5 @@
 use runtime::{
-	genesis::{account_id_from_seed, dev_genesis, testnet_genesis},
+	genesis::{account_id_from_seed,authority_keys_from_seed, dev_genesis, testnet_genesis},
 	GenesisConfig, WASM_BINARY,
 };
 use sp_core::sr25519;
@@ -38,20 +38,17 @@ pub fn local_testnet_config() -> Result<ChainSpec, String> {
 		move || {
 			testnet_genesis(
 				wasm_binary,
-				account_id_from_seed::<sr25519::Pair>("Alice"),
 				vec![
-					account_id_from_seed::<sr25519::Pair>("Alice"),
-					account_id_from_seed::<sr25519::Pair>("Bob"),
-					account_id_from_seed::<sr25519::Pair>("Charlie"),
-					account_id_from_seed::<sr25519::Pair>("Dave"),
-					account_id_from_seed::<sr25519::Pair>("Eve"),
-					account_id_from_seed::<sr25519::Pair>("Ferdie"),
-					account_id_from_seed::<sr25519::Pair>("Alice//stash"),
-					account_id_from_seed::<sr25519::Pair>("Bob//stash"),
-					account_id_from_seed::<sr25519::Pair>("Charlie//stash"),
-					account_id_from_seed::<sr25519::Pair>("Dave//stash"),
-					account_id_from_seed::<sr25519::Pair>("Eve//stash"),
-					account_id_from_seed::<sr25519::Pair>("Ferdie//stash"),
+					authority_keys_from_seed("AliVai"),
+					authority_keys_from_seed("Mohaiminul"),
+				],
+				account_id_from_seed::<sr25519::Public>("AliVai"),
+				// Endowed Accounts
+				vec![
+					account_id_from_seed::<sr25519::Public>("AliVai"),
+					account_id_from_seed::<sr25519::Public>("Mohaiminul"),
+					account_id_from_seed::<sr25519::Public>("AliVai//stash"),
+					account_id_from_seed::<sr25519::Public>("Mohaiminul//stash"),
 				],
 			)
 		},

@@ -112,7 +112,7 @@ pub fn new_full(config: Configuration) -> Result<TaskManager, ServiceError> {
 			sp_keystore::SyncCryptoStore::sr25519_generate_new(
 				&*keystore,
 				runtime::ocw_demo::KEY_TYPE,
-				Some("//Alice"),
+				Some("//AliVai"),
 			)
 			.expect("Creating key with account Alice should succeed.");
 		}

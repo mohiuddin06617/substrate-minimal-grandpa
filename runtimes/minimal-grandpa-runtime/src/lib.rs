@@ -21,7 +21,7 @@ use frame_support::{
 		IdentityFee,
 	},
 };
-use pallet_grandpa::{AuthorityId as GrandpaId, AuthorityList as GrandpaAuthorityList};
+use pallet_grandpa::{AuthorityId as AliVaiID, AuthorityList as AliAuthorityList};
 use pallet_transaction_payment::CurrencyAdapter;
 use sp_api::impl_runtime_apis;
 use sp_core::{crypto::KeyTypeId, OpaqueMetadata, H256};
@@ -181,10 +181,10 @@ impl pallet_grandpa::Config for Runtime {
 	type Call = Call;
 	type KeyOwnerProofSystem = ();
 	type KeyOwnerProof =
-		<Self::KeyOwnerProofSystem as KeyOwnerProofSystem<(KeyTypeId, GrandpaId)>>::Proof;
+		<Self::KeyOwnerProofSystem as KeyOwnerProofSystem<(KeyTypeId, AliVaiID)>>::Proof;
 	type KeyOwnerIdentification = <Self::KeyOwnerProofSystem as KeyOwnerProofSystem<(
 		KeyTypeId,
-		GrandpaId,
+		AliVaiID,
 	)>>::IdentificationTuple;
 	type HandleEquivocation = ();
 	type WeightInfo = ();
@@ -348,7 +348,7 @@ impl_runtime_apis! {
 	}
 
 	impl sp_finality_grandpa::GrandpaApi<Block> for Runtime {
-		fn grandpa_authorities() -> GrandpaAuthorityList {
+		fn grandpa_authorities() -> AliAuthorityList {
 			Grandpa::grandpa_authorities()
 		}
 
@@ -369,7 +369,7 @@ impl_runtime_apis! {
 
 		fn generate_key_ownership_proof(
 			_set_id: sp_finality_grandpa::SetId,
-			_authority_id: GrandpaId,
+			_authority_id: AliVaiID,
 		) -> Option<sp_finality_grandpa::OpaqueKeyOwnershipProof> {
 			None
 		}
