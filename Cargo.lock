@@ -104,6 +104,36 @@ dependencies = [
 ]
 
 [[package]]
+name = "alivai-grandpa-runtime"
+version = "3.0.0"
+dependencies = [
+ "frame-executive",
+ "frame-support",
+ "frame-system",
+ "pallet-balances",
+ "pallet-grandpa",
+ "pallet-randomness-collective-flip",
+ "pallet-sudo",
+ "pallet-timestamp",
+ "pallet-transaction-payment",
+ "parity-scale-codec 2.0.1",
+ "serde",
+ "sp-api",
+ "sp-block-builder",
+ "sp-core",
+ "sp-finality-grandpa",
+ "sp-inherents",
+ "sp-io",
+ "sp-offchain",
+ "sp-runtime",
+ "sp-session",
+ "sp-std",
+ "sp-transaction-pool",
+ "sp-version",
+ "substrate-wasm-builder",
+]
+
+[[package]]
 name = "ansi_term"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2165,13 +2195,13 @@ checksum = "494b4d60369511e7dea41cf646832512a94e542f68bb9c49e54518e0f468eb47"
 name = "hybrid-consensus"
 version = "3.0.0"
 dependencies = [
+ "alivai-grandpa-runtime",
  "ctrlc",
  "derive_more 0.15.0",
  "exit-future",
  "futures 0.1.31",
  "futures 0.3.13",
  "log",
- "minimal-grandpa-runtime",
  "parking_lot 0.9.0",
  "sc-basic-authorship",
  "sc-cli",
@@ -2595,13 +2625,13 @@ dependencies = [
 name = "kitchen-node"
 version = "3.0.0"
 dependencies = [
+ "alivai-grandpa-runtime",
  "ctrlc",
  "derive_more 0.15.0",
  "exit-future",
  "futures 0.1.31",
  "futures 0.3.13",
  "log",
- "minimal-grandpa-runtime",
  "parking_lot 0.9.0",
  "sc-basic-authorship",
  "sc-cli",
@@ -3368,36 +3398,6 @@ dependencies = [
  "proc-macro2 1.0.24",
  "quote 1.0.9",
  "syn 1.0.64",
-]
-
-[[package]]
-name = "minimal-grandpa-runtime"
-version = "3.0.0"
-dependencies = [
- "frame-executive",
- "frame-support",
- "frame-system",
- "pallet-balances",
- "pallet-grandpa",
- "pallet-randomness-collective-flip",
- "pallet-sudo",
- "pallet-timestamp",
- "pallet-transaction-payment",
- "parity-scale-codec 2.0.1",
- "serde",
- "sp-api",
- "sp-block-builder",
- "sp-core",
- "sp-finality-grandpa",
- "sp-inherents",
- "sp-io",
- "sp-offchain",
- "sp-runtime",
- "sp-session",
- "sp-std",
- "sp-transaction-pool",
- "sp-version",
- "substrate-wasm-builder",
 ]
 
 [[package]]

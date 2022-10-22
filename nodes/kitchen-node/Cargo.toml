@@ -60,7 +60,7 @@ sp-transaction-pool = '3.0'
 
 # Runtime with custom runtime-api (custom API only used in rpc-node)
 # runtime = { package = "api-runtime", path = "../../runtimes/api-runtime" }
- runtime = { package = "minimal-grandpa-runtime", path = "../../runtimes/minimal-grandpa-runtime" }
+ runtime = { package = "alivai-grandpa-runtime", path = "../../runtimes/alivai-grandpa-runtime" }
 # ---
 
 [build-dependencies]

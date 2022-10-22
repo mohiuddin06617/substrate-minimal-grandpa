@@ -28,7 +28,7 @@ members = [
 	"pallets/weights",
 	"runtimes/api-runtime",
 	"runtimes/ocw-runtime",
-	"runtimes/minimal-grandpa-runtime",
+	"runtimes/alivai-grandpa-runtime",
 	"runtimes/super-runtime",
 	"runtimes/weight-fee-runtime",
 	"nodes/basic-pow",
